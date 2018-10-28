@@ -89,11 +89,13 @@ function convertHtmlToJson(content) {
         struct.push(aTagMatch[1]);
       }
     }
+    
+    const eventName = (struct[2].indexOf('リョーコー') === -1) ? 'リョーコー' + struct[2] : struct[2];
 
     tournamentArray.push({
       date: struct[0],
       prefecture: struct[1],
-      name: struct[2],
+      name: eventName,
       type: struct[3],
       rank: struct[4],
       active: struct[5],
